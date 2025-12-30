@@ -16,7 +16,7 @@ import { trace } from 'node:console';
 const config = ({
   
   testDir: './tests',
-  testMatch: '/Day16-Calenders.spec.js',
+  testMatch: '/Day17-FramesAndPopups.spec.js',
   timeout: 40 *1000,
 
   expect:{
