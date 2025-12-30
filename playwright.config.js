@@ -16,7 +16,7 @@ import { trace } from 'node:console';
 const config = ({
   
   testDir: './tests',
-  testMatch: '/Day12-E2EWebAutomationProject.spec.js',
+  testMatch: '/Day15-RewiteSimpleWayE2EProject.spec.js',
   timeout: 40 *1000,
 
   expect:{

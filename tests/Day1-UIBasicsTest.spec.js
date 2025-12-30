@@ -28,3 +28,5 @@ test("My First Playwright Test2", async ()=>{
 
 
 // To make it simple We use anonymous function using fat operator
+ //npx playwright test --headed --ui
+// 
