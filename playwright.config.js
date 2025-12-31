@@ -16,7 +16,7 @@ import { trace } from 'node:console';
 const config = ({
   
   testDir: './tests',
-  testMatch: '/Day21-APiTesting3Recfactoring.spec.js',
+  testMatch: '/Day24-Intercepting-APIResponse-route.spec.js',
   timeout: 40 *1000,
 
   expect:{
