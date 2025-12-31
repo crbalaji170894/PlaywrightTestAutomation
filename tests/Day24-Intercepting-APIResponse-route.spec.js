@@ -64,7 +64,7 @@ test("Create Order using API calls", async ({ page }) => {
     await page.route("https://rahulshettyacademy.com/api/ecom/order/get-orders-for-customer/*",
         async route => {
             //Fetch the Reposnse using rote .request
-            const APIrepsonse = await page.request.fetch(route.request);
+            const APIrepsonse = await page.request.fetch(route.request());
 
             let body = JSON.stringify(fakePayLoadOrders); // convert Javascroipt object to JSON
 
