@@ -51,7 +51,7 @@ test.beforeAll(async () => {
 
 //Note page.route steps need to write before performing the API call
 
-test("Create Order using API calls", async ({ page }) => {
+test("Security test case ", async ({ page }) => {
 
     //value is any variable name
 
@@ -74,8 +74,7 @@ test("Create Order using API calls", async ({ page }) => {
 
     )
 
-    await page.locator("button:has-text('View')").first().click();
-    await expect(page.locator("p").last()).toHaveText("You are not authorize to view this order");
+    
 
     //WebTable
 

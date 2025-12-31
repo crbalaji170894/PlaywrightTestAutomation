@@ -16,7 +16,7 @@ import { trace } from 'node:console';
 const config = ({
   
   testDir: './tests',
-  testMatch: '/Day25-Intercepting-APIRequest-SucurityCheck-route.spec.js',
+  testMatch: '/Day26-NetworkAbortcallsAndTrackallRequest.spec.js',
   timeout: 40 *1000,
 
   expect:{
