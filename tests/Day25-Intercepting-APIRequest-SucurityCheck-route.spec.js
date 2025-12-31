@@ -59,34 +59,48 @@ test("Create Order using API calls", async ({ page }) => {
 
     await page.goto("https://rahulshettyacademy.com/client/");
 
-    //page.route
-
-        await page.route("https://rahulshettyacademy.com/api/ecom/order/get-orders-for-customer/*",
-    
-        async route => {
-            //Fetch the Reposnse using rote .request
-        const APIrepsonse = await page.request.fetch(route.request());
-
-            let body = JSON.stringify(fakePayLoadOrders); // convert Javascroipt object to JSON
-
-            //route.fullfill -> fulllfill t get the full api respons from route.request
-
-            route.fulfill({
-                response,
-                    body
-            });
-        });
-
-    //Go to Orders
-
     await page.locator('button[routerlink="/dashboard/myorders"]').click();
 
-    //once after clicking the orders pages we need wat for reposne belwo request url ** (mandatory)
+    //Before Clicking the view Button we need to define route it
 
-    await page.waitForResponse("https://rahulshettyacademy.com/api/ecom/order/get-orders-for-customer/*")
+    // To Intercepting the request to verify security checks
 
-    console.log(await page.locator(".mt-4").textContent());
+    // continiue method
+
+    await page.route("https://rahulshettyacademy.com/api/ecom/order/get-orders-details?id=*",
+      
+        async route => route.continue(
+            {url:"https://rahulshettyacademy.com/api/ecom/order/get-orders-details?id=12345"})
+
+    )
+
+    await page.locator("button:has-text('View')").first().click();
+    await expect(page.locator("p").last()).toHaveText("You are not authorize to view this order");
+
+    //WebTable
+
+    //await page.locator("tbody").waitFor();
+
+    //await expect(page.locator("p").last()).toHaveText("You are not authorize to view this order");
+
+    // const tableallOrderRows = page.locator("tbody tr");
+
+    // const rowCount = await tableallOrderRows.count();
+
+    // console.log( rowCount);
+
+    // for (let k = 0; k < rowCount; k++) {
+
+    //     const rowOrderId = await tableallOrderRows.nth(k).locator("th").textContent();
+
+    //     console.log(rowOrderId);
+
+    //     if(response.orderID.includes(rowOrderId))
+    //     {
+    //         await tableallOrderRows.nth(k).locator("button").first().click();
+    //         break;
+    //     }
+    // }
 
 
 });
-
