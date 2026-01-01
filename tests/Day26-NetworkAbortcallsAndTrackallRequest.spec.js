@@ -2,6 +2,10 @@ const{test, expect} = require ('@playwright/test');
 
 // abort any networks calls using regurlar expression in request urls
 
+// Server is Down
+
+// never reach the response  to the browser
+
 
 test.only("locating the webelements", async ({page})=>{
 
