@@ -16,7 +16,7 @@ import { trace } from 'node:console';
 const config = ({
   
   testDir: './tests',
-  testMatch: '/Day28-VisualTesting.spec.js',
+  testMatch: '/Day29.2-FileUpload_excel.spec.js',
   timeout: 40 *1000,
 
   expect:{
