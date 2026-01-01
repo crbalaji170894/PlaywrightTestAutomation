@@ -1,7 +1,7 @@
 const{test, expect} = require ('@playwright/test');
 
 
-test("locating the webelements", async ({page})=>{
+test("ScreenShot Test Case", async ({page})=>{
 
     await page.goto("https://www.facebook.com/");
 
@@ -11,13 +11,13 @@ test("locating the webelements", async ({page})=>{
 
     await page.locator('#pass').fill("test@123A");
     
-    await page.locator ("[name='login']").screenshot({path:'loginlocator.png'});
+    await page.locator ("[name='login']").screenshot({path:'loginlocator.png'}); //locator level screenshot
 
     await page.locator("[name='login']").click();
 
     //console.log( await page.locator('._9ay7').textContent());
 
-    await page.screenshot({path:'fulllpage.png'});
+    await page.screenshot({path:'fulllpage.png'});// page level screenshot
 
     await page.pause();
 
